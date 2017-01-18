@@ -12,11 +12,19 @@ before_action :authenticate_user!
     end
   end
   def show
-    @course = Course.find(params[:id])
+
   end
 
   private
-
+  helper_method :current_course
+  def require_authorized_for_current_course
+    if current_course.user != current_user
+      render text: "Unauthorized", status: :unauthorized
+    end
+  end
+  def current_course
+    @current_course ||= Course.find(params[:id])
+  end
   def course_params
     params.require(:course).permit(:title, :description,:cost)
   end
