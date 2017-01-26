@@ -12,7 +12,7 @@ before_action :authenticate_user!
     end
   end
   def show
-
+    @section = Section.new
   end
 
   private
