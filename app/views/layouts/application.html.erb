@@ -31,14 +31,15 @@
         <%= link_to 'See all Courses', courses_path %>
         </li>
       </ul>
+    <ul class="nav navbar-nav navbar-right">
     <% if ! user_signed_in? %>
-      <ul class="nav navbar-nav navbar-right">
         <li><%= link_to 'Sign up', new_user_registration_path %></li>
         <li><%= link_to 'Log in', new_user_session_path %></li> 
       </ul>
     <% else user_signed_in? %>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %> </li>
+        <li><%= link_to 'My Dashboard' , dashboard_path %></li>
       </ul>   
     <% end %>
     </div><!-- /.navbar-collapse -->
