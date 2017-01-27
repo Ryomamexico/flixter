@@ -56,9 +56,35 @@
 <hr class="clr">
 <div id="footer">
   <div class="container">
-    <b>Teachers</b>
-    <br>
-    <%= link_to 'Teach a Course', new_instructor_course_path %>
+    <div class="col-xs-6 col-sm3">
+      <b>Teachers</b>
+      <br>
+      <%= link_to 'Teach a Course', new_instructor_course_path %>
+      <br>
+      <%= link_to 'My Dashboard', dashboard_path %>    
+    </div>
+    <div class="col-xs-6 col-sm3">
+    <b>About</b><br>
+      <%= link_to 'Team', '#' %>
+      <%= link_to 'Careers', '#' %>
+      <%= link_to 'Privacy policy', '#' %>
+    </div>
+    <div class="col-xs-6 col-sm3">
+      <b>Contact</b><br>
+      ryoma@couponroller.com
+      <br>
+      Ogakishi
+      <br>
+      Mistuyacho
+    </div>
+    <div class="col-xs-6 col-sm3 social">
+      <b>Social</b><br>
+      <%= link_to 'http://github.com/Ryomamexico' do %>
+        <%= image_tag 'github.png' , class:'social-button'%>
+      <% end -%>
+      <%= image_tag 'facebook.png', class:'social-button' %>
+      <%= image_tag 'twitter.png', class:'social-button' %>
+    </div>
   </div>
 </div>
 </body>
